@@ -3,21 +3,31 @@
 }
 @model IList<Artista>
 
-@foreach (Artista artista in Model)
-{
-      <div class="card" style="width: 18rem;">
-      <img src="@artista.foto" class="card-img-top" alt="Card image">
-      <div class="card-body">
-        <h5 class="card-title">@artista.nombre</h5>
-      </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">Genero: @artista.genero</li>
-        <li class="list-group-item">Fecha de nacimiento: @artista.fecha_nacimiento</li>
-        <li class="list-group-item">Edad: @artista.edad</li>
-      </ul>
-      <div class="card-body">
-        <a href="#" class="card-link">Card link</a>
-        <a href="#" class="card-link">Another link</a>
-      </div>
-    </div>
-}
+<div class="container" align="center">
+    <h1 class="display-2">--------- Artistas ---------</h1>
+    <br><br><br>
+</div>
+
+<div class="row" align="center">
+
+    @foreach (Artista artista in Model)
+    {   
+        <div class="col-sm-3">
+          <div class="card" style="width: 18rem;">
+              <img src="@artista.foto" class="card-img-top" alt="Card image">
+              <div class="card-body">
+                <h5 class="card-title">@artista.nombre</h5>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Genero: @artista.genero</li>
+                <li class="list-group-item">Fecha de nacimiento: @artista.fecha_nacimiento</li>
+                <li class="list-group-item">Edad: @artista.edad</li>
+              </ul>
+              <div class="card-body">
+                <a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a>
+              </div>
+          </div>
+        </div>
+    }
+</div>

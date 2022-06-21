@@ -30,9 +30,6 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" asp-area="" asp-controller="Home" asp-action="Artista">Artistas</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="artista.html">Informacion de los artistas</a>
-                    </li>
                     <li>
                         <img src="~/imagen/logo_transparent.png" alt="img not fund" width=250px>
                     </li>
@@ -60,6 +57,8 @@
         </div>
     </footer>
 
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
     @RenderSection("Scripts", required: false)
 </body>
 </html>
