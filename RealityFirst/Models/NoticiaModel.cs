@@ -1,6 +1,6 @@
 ﻿namespace RealityFirst.Models
 {
-    public class Noticia
+    public class NoticiaModel
     {
         public int id_noticia { get; set; }
         public string titulo { get; set; }
@@ -11,7 +11,7 @@
         public string foto_noticia { get; set; }
         public int id_artista { get; set; }
 
-        public Noticia()
+        public NoticiaModel()
         {
 
         }

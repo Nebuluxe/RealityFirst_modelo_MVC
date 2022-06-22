@@ -27,13 +27,13 @@ namespace RealityFirst.Controllers
 
         public IActionResult Artista()
         {
-            IList<Artista> lista = artista.GetAll();
+            IList<ArtistaModel> lista = artista.GetAll();
             return View("Artista", lista);
         }
 
         public IActionResult Index()
         {
-            IList<Noticia> lista = noticia.GetAll();
+            IList<NoticiaModel> lista = noticia.GetAll();
             return View("Index", lista);
         }
 
@@ -45,6 +45,12 @@ namespace RealityFirst.Controllers
         public IActionResult Contacto()
         {
             return View();
+        }
+
+        public IActionResult Ficha_artista(int id)
+        {
+            ArtistaModel Obj = artista.Get(id);
+            return View(Obj);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

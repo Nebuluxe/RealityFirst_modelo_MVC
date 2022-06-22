@@ -2,7 +2,7 @@
     ViewData["Title"] = "Home";
 }
    
-@model IList<Noticia>
+@model IList<NoticiaModel>
 
 
  <div class="container" align = center>
@@ -92,7 +92,7 @@
     <br><br><br>
   </div>
 
-    @foreach (Noticia artista in Model)
+    @foreach (NoticiaModel artista in Model)
     {   
         <div class="card mb-3">
             <img src="@artista.foto_noticia" class="card-img-top" alt="...">

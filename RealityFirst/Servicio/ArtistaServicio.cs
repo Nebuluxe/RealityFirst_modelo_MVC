@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace RealityFirst.Servicio
 {
-    public class ArtistaServicio : IServicio<Artista>
+    public class ArtistaServicio : IServicio<ArtistaModel>
     {
         private string Connection;
 
@@ -16,9 +16,9 @@ namespace RealityFirst.Servicio
             this.Connection = ConectionString;
         }
 
-        public IList<Artista> GetAll()
+        public IList<ArtistaModel> GetAll()
         {
-            IList<Artista> lista = new List<Artista>();
+            IList<ArtistaModel> lista = new List<ArtistaModel>();
 
             using (SqlConnection server = new SqlConnection(this.Connection))
             {
@@ -31,7 +31,7 @@ namespace RealityFirst.Servicio
                     {
                         while (reader.Read())
                         {
-                            lista.Add(new Artista()
+                            lista.Add(new ArtistaModel()
                             {
                                 id = reader.GetInt32(0),
                                 nombre = reader.GetString(1),
@@ -48,9 +48,9 @@ namespace RealityFirst.Servicio
             return lista;
         }
 
-        public Artista Get(int id)
+        public ArtistaModel Get(int id)
         {
-            Artista artista = new Artista();
+            ArtistaModel artista = new ArtistaModel();
 
             using (SqlConnection server = new SqlConnection(this.Connection))
             {
@@ -63,7 +63,7 @@ namespace RealityFirst.Servicio
                     {
                         while (reader.Read())
                         {
-                            artista = new Artista()
+                            artista = new ArtistaModel()
                             {
                                 id = reader.GetInt32(0),
                                 nombre = reader.GetString(1),
@@ -80,12 +80,12 @@ namespace RealityFirst.Servicio
             return artista;
         } 
 
-        public void Create(Artista obj)
+        public void Create(ArtistaModel obj)
         {
 
         }
 
-        public void Update(Artista obj)
+        public void Update(ArtistaModel obj)
         {
 
         }

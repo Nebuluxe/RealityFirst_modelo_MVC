@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace RealityFirst.Servicio
 {
-    public class NoticiaServicio : IServicio<Noticia>
+    public class NoticiaServicio : IServicio<NoticiaModel>
     {
         private string Connection;
 
@@ -16,9 +16,9 @@ namespace RealityFirst.Servicio
             this.Connection = ConectionString;
         }
 
-        public IList<Noticia> GetAll()
+        public IList<NoticiaModel> GetAll()
         {
-            IList<Noticia> lista = new List<Noticia>();
+            IList<NoticiaModel> lista = new List<NoticiaModel>();
 
             using (SqlConnection server = new SqlConnection(this.Connection))
             {
@@ -31,7 +31,7 @@ namespace RealityFirst.Servicio
                     {
                         while (reader.Read())
                         {
-                            lista.Add(new Noticia()
+                            lista.Add(new NoticiaModel()
                             {
                                 id_noticia = reader.GetInt32(0),
                                 titulo = reader.GetString(1),
@@ -50,9 +50,9 @@ namespace RealityFirst.Servicio
             return lista;
         }
 
-        public Noticia Get(int id)
+        public NoticiaModel Get(int id)
         {
-            Noticia artista = new Noticia();
+            NoticiaModel artista = new NoticiaModel();
 
             using (SqlConnection server = new SqlConnection(this.Connection))
             {
@@ -65,7 +65,7 @@ namespace RealityFirst.Servicio
                     {
                         while (reader.Read())
                         {
-                            artista = new Noticia()
+                            artista = new NoticiaModel()
                             {
                                 id_noticia = reader.GetInt32(0),
                                 titulo = reader.GetString(1),
@@ -84,12 +84,12 @@ namespace RealityFirst.Servicio
             return artista;
         }
 
-        public void Create(Noticia obj)
+        public void Create(NoticiaModel obj)
         {
 
         }
 
-        public void Update(Noticia obj)
+        public void Update(NoticiaModel obj)
         {
 
         }
