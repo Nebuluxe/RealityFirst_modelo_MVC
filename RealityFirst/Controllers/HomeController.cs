@@ -12,24 +12,29 @@ namespace RealityFirst.Controllers
     public class HomeController : Controller
     {
         IConfiguration config;
-        ArtistaServicio app;
+        ArtistaServicio artista;
+
+        NoticiaServicio noticia;    
 
         public HomeController(IConfiguration config)
         {
             this.config = config;
             string ConnectionString = config.GetConnectionString("DBRealityFirst");
-            app = new ArtistaServicio(ConnectionString);
+            artista = new ArtistaServicio(ConnectionString);
+            noticia = new NoticiaServicio(ConnectionString);
+
         }
 
         public IActionResult Artista()
         {
-            IList<Artista> lista = app.GetAll();
+            IList<Artista> lista = artista.GetAll();
             return View("Artista", lista);
         }
 
         public IActionResult Index()
         {
-            return View();
+            IList<Noticia> lista = noticia.GetAll();
+            return View("Index", lista);
         }
 
         public IActionResult Privacy()

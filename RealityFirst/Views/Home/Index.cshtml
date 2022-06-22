@@ -1,17 +1,24 @@
 ﻿@{
     ViewData["Title"] = "Home";
 }
-    
+   
+@model IList<Noticia>
+
+
  <div class="container" align = center>
     <br>
     <h1 class="display-4">Bienvenido a Realty First</h1>
-    <img src="~/imagen/logo_transparent.png" width="450px">
+    <img src="~/imagen/logo_transparent.png" class="img-fluid" width="450px" alt="...">
     <h1 class="display-4">Aqui podras ver eventos y comprar entradas <br> para tus artistas favoritos</h1>
     <br>
   </div>
 
    <br><br>
 
+  <div class="container" align="center">
+    <h1 class="display-2">Aqui algunos artistas</h1>
+    <br><br><br>
+  </div>
   <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -77,3 +84,22 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
+
+  <br><br><br>
+
+  <div class="container" align="center">
+    <h1 class="display-2">Noticias del momento</h1>
+    <br><br><br>
+  </div>
+
+    @foreach (Noticia artista in Model)
+    {   
+        <div class="card mb-3">
+            <img src="@artista.foto_noticia" class="card-img-top" alt="...">
+            <div class="card-body">
+            <h5 class="card-title">@artista.titulo</h5>
+            <p class="card-text">@artista.contenido</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+        </div>
+    }
