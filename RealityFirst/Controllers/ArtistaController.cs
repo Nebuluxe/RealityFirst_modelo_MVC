@@ -19,6 +19,12 @@ namespace RealityFirst.Controllers
             this.config = config;
             string ConnectionString = config.GetConnectionString("DBRealityFirst");
             artista = new ArtistaServicio(ConnectionString);
+
+        }
+        public IActionResult Index()
+        {
+            IList<ArtistaModel> lista = artista.GetAll();
+            return View("index", lista);
         }
 
         public IActionResult Artista()
@@ -29,8 +35,8 @@ namespace RealityFirst.Controllers
 
         public IActionResult Ficha_artista(int id)
         {
-            ArtistaModel Obj = artista.Get(id);
-            return View(Obj);
+            ArtistaModel obj_artista = artista.Get(id);
+            return View(obj_artista);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

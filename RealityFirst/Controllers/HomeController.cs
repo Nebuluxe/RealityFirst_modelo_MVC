@@ -12,20 +12,19 @@ namespace RealityFirst.Controllers
     public class HomeController : Controller
     {
         IConfiguration config;
-        NoticiaServicio noticia;    
+        ArtistaServicio artista;
 
         public HomeController(IConfiguration config)
         {
             this.config = config;
             string ConnectionString = config.GetConnectionString("DBRealityFirst");
-            noticia = new NoticiaServicio(ConnectionString);
+            artista = new ArtistaServicio(ConnectionString);
 
         }
-
         public IActionResult Index()
         {
-            IList<NoticiaModel> lista = noticia.GetAll();
-            return View("Index", lista);
+            IList<ArtistaModel> lista = artista.GetAll();
+            return View("index", lista);
         }
 
         public IActionResult Privacy()

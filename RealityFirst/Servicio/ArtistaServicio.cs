@@ -24,7 +24,7 @@ namespace RealityFirst.Servicio
             {
                 server.Open();
 
-                string query = string.Format("select id_artista, nombre, edad, genero_musical, foto, fecha_nac from Artista where id_artista = {0};",id);
+                string query = string.Format("select ar.id_artista, ar.nombre, ar.edad, ar.genero_musical, ar.foto, ar.fecha_nac, nt.id_noticia, nt.titulo, nt.contenido, nt.fecha_not, nt.escritor, nt.editor, nt.imagen_not from Artista AS ar JOIN noticia_artista AS nt ON(ar.id_artista = nt.id_artista) where ar.id_artista = {0};", id);
                 using (SqlCommand cmd = new SqlCommand(query, server))
                 {
                     using (SqlDataReader reader = cmd.ExecuteReader())
@@ -39,7 +39,15 @@ namespace RealityFirst.Servicio
                                 edad = reader.GetInt32(2),
                                 genero = reader.GetString(3),
                                 foto = reader.GetString(4),
-                                fecha_nacimiento = reader.GetString(5)
+                                fecha_nacimiento = reader.GetString(5),
+                                id_noticia = reader.GetInt32(6),
+                                titulo = reader.GetString(7),
+                                contenido = reader.GetString(8),
+                                fecha_noticia = reader.GetString(9),
+                                escritor = reader.GetString(10),
+                                editor = reader.GetString(11),
+                                foto_noticia = reader.GetString(12)
+
                             };
                         }
                     }
@@ -57,7 +65,7 @@ namespace RealityFirst.Servicio
             {
                 server.Open();
 
-                string query = string.Format("select id_artista, nombre, edad, genero_musical, foto, fecha_nac from Artista;");
+                string query = string.Format("select ar.id_artista, ar.nombre, ar.edad, ar.genero_musical, ar.foto, ar.fecha_nac, nt.id_noticia, nt.titulo, nt.contenido, nt.fecha_not, nt.escritor, nt.editor, nt.imagen_not from Artista AS ar JOIN noticia_artista AS nt ON(ar.id_artista = nt.id_artista);");
                 using (SqlCommand cmd = new SqlCommand(query, server))
                 {
                     using (SqlDataReader reader = cmd.ExecuteReader())
@@ -71,7 +79,14 @@ namespace RealityFirst.Servicio
                                 edad = reader.GetInt32(2),
                                 genero = reader.GetString(3),
                                 foto = reader.GetString(4),
-                                fecha_nacimiento = reader.GetString(5)
+                                fecha_nacimiento = reader.GetString(5),
+                                id_noticia = reader.GetInt32(6),
+                                titulo = reader.GetString(7),
+                                contenido = reader.GetString(8),
+                                fecha_noticia = reader.GetString(9),
+                                escritor = reader.GetString(10),
+                                editor = reader.GetString(11),
+                                foto_noticia = reader.GetString(12)
                             });
                         }
                     }
