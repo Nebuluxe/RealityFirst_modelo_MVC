@@ -1,0 +1,18 @@
+﻿@{
+}
+
+@model IList<EventoModel>
+
+@foreach (EventoModel evento in Model)
+{
+  <div class="card bg-dark text-white">
+  <img src="@evento.imagen_evento" class="card-img" alt="...">
+  <div class="card-img-overlay">
+    <h5 class="card-title">Nombre:</h5>
+    <p class="card-text">Edad:</p>
+    <p class="card-text">Fecha nacimiento:</p
+    <p class="card-text">Genero musical:</p>
+  </div>
+  </div>
+}
+

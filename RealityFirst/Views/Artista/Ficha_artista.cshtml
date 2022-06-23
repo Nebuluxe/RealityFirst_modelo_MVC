@@ -4,32 +4,40 @@
 
 @model ArtistaModel
 
+
+<div class="container" >
+    <a class="btn btn-dark rounded-pill" asp-area="" asp-controller="Artista" asp-action="Artista"> - VOLVER - </a>
+</div>
+
 <div class="container" align="center">
     <h1 class="display-2"> Informacion del artista </h1>
     <br><br><br>
 </div>
 
-<div class="row g-0 bg-light position-relative">
-  <div class="col-md-6 mb-md-0 p-md-4">
-    <img src="@Model.foto" class="w-100" alt="...">
-  </div>
-  <div class="col-md-6 p-4 ps-md-0">
-    <h5 class="mt-0">Columns with stretched link</h5>
-    <p>Another instance of placeholder content for this other custom component. It is intended to mimic what some real-world content would look like, and we're using it here to give the component a bit of body and size.</p>
-    <a href="#" class="stretched-link">Go somewhere</a>
+<div class="card bg-dark text-white">
+  <img src="@Model.foto" class="card-img" alt="...">
+  <div class="card-img-overlay">
+    <h5 class="card-title">Nombre: @Model.nombre</h5>
+    <p class="card-text">Edad: @Model.edad</p>
+    <p class="card-text">Fecha nacimiento: @Model.fecha_nacimiento</p
+    <p class="card-text">Genero musical: @Model.genero</p>
   </div>
 </div>
 
 <br>
 
-<div class="row g-0 bg-light position-relative">
-  <div class="col-md-6 mb-md-0 p-md-4">
+<a href="/Evento/Eventos/@Model.id" class="btn btn-dark">Ver mas</a>
+
+<br>
+
+<div class="row g-2 bg-light position-relative">
+    <div class="col-md-6 mb-md-0 p-md-4">
     <img src="@Model.foto_noticia" class="w-100" alt="...">
-  </div>
-  <div class="col-md-6 p-4 ps-md-0">
-    <h5 class="mt-0">Columns with stretched link</h5>
-    <p>Another instance of placeholder content for this other custom component. It is intended to mimic what some real-world content would look like, and we're using it here to give the component a bit of body and size.</p>
-    <a href="#" class="stretched-link">Go somewhere</a>
-  </div>
+    </div>
+    <div class="col-md-6 p-4 ps-md-0">
+    <h5 class="mt-0">@Model.titulo</h5>
+    <p>@Model.contenido</p>
+    <p><em>Escritor: @Model.escritor, Editor: @Model.editor</em></p>
+    </div>
 </div>
 
