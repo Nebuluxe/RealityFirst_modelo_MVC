@@ -14,21 +14,34 @@
     <br><br><br>
 </div>
 
-<div class="card bg-dark text-white">
+<div class="card bg-dark text-white shadow p-3 mb-5 bg-body rounded-3">
   <img src="@Model.foto" class="card-img" alt="...">
   <div class="card-img-overlay">
     <h5 class="card-title">Nombre: @Model.nombre</h5>
     <p class="card-text">Edad: @Model.edad</p>
-    <p class="card-text">Fecha nacimiento: @Model.fecha_nacimiento</p
+    <p class="card-text">Fecha nacimiento: @Model.fecha_nacimiento</p>
     <p class="card-text">Genero musical: @Model.genero</p>
   </div>
 </div>
 
 <br>
 
-<a href="/Evento/Eventos/@Model.id" class="btn btn-dark">Ver mas</a>
+<div class="card text-center">
+  <div class="card-header">
+    <h1 class="display-6">¡Atencion!</h1>
+  </div>
+  <div class="card-body">
+    <img src="~/imagen/atencioncompra.png" width="150px"/>
+    <h5 class="card-title">Te invitamos a revisar los eventos proximos de @Model.nombre</h5>
+    <p class="card-text">Presiona en el boton de aqui abajo para ver los eventos</p>
+    <a href="/Evento/Eventos/@Model.id" class="btn btn-dark">Ver eventos</a>
+  </div>
+  <div class="card-footer text-muted">
+    -
+  </div>
+</div>
 
-<br>
+<br><br><br>
 
 <div class="row g-2 bg-light position-relative">
     <div class="col-md-6 mb-md-0 p-md-4">
