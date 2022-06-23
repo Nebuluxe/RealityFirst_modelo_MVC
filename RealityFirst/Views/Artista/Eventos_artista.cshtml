@@ -1,0 +1,62 @@
+﻿
+@{
+    ViewData["Title"] = "Eventos";
+}
+
+@model IList<EventosModel>
+
+<div class="row" align="center">
+    @foreach (EventosModel Eventos in Model)
+    {   
+        <div class="row g-0 bg-dark position-relative ">
+            <div class="col-md-6 mb-md-0 p-md-4">
+              <img id="@Eventos.imagen_evento"  class="w-100" alt="...">
+            </div>
+            <div class="col-md-6 p-4 ps-md-0 text-light">
+                <h5 class="mt-0" id="titulo"></h5>
+                <h3>Informacion</h3>
+                <table class="table table-dark">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Evento</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Nombre</td>
+                        <td id="nombre">@Eventos.nombre_ev</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Lugar Evento</td>
+                        <td id="lugarEvento">@Eventos.lugar_evento</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td >Fecha Evento</td>
+                        <td id="fechaEvento">@Eventos.fecha_evento</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td></td>
+                        <td id="fecha">-</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">4</th>
+                        <td>Tipo de evento STR</td>
+                        <td id="tipoEventoStr">-</td>
+                    </tr>
+                </tbody>
+                </table>
+                <p id="noticiaTexto"></p>
+                <p >Editor: <strong id="editor">-</strong></p>
+                <p > Escritor: <strong id="escritor">-</strong></p>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <button class="btn btn-primary" type="button">Comprar</button>
+                </div>
+            </div>
+        </div>
+    }
+</div>
