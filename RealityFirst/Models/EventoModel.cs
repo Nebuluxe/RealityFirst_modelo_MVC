@@ -9,6 +9,7 @@
         public string imagen_evento { get; set; }
         public string nombre_artista { get; set; }
         public string genero_musical { get; set; }
+        public int id_artista { get; set; }
         public EventoModel()
         {
 
