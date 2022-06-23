@@ -9,33 +9,28 @@ using Microsoft.Extensions.Configuration;
 
 namespace RealityFirst.Controllers
 {
-    public class HomeController : Controller
+    public class ArtistaController : Controller
     {
         IConfiguration config;
-        NoticiaServicio noticia;    
+        ArtistaServicio artista;
 
-        public HomeController(IConfiguration config)
+        public ArtistaController(IConfiguration config)
         {
             this.config = config;
             string ConnectionString = config.GetConnectionString("DBRealityFirst");
-            noticia = new NoticiaServicio(ConnectionString);
-
+            artista = new ArtistaServicio(ConnectionString);
         }
 
-        public IActionResult Index()
+        public IActionResult Artista()
         {
-            IList<NoticiaModel> lista = noticia.GetAll();
-            return View("Index", lista);
+            IList<ArtistaModel> lista = artista.GetAll();
+            return View("Artista", lista);
         }
 
-        public IActionResult Privacy()
+        public IActionResult Ficha_artista(int id)
         {
-            return View();
-        }
-
-        public IActionResult Contacto()
-        {
-            return View();
+            ArtistaModel Obj = artista.Get(id);
+            return View(Obj);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
