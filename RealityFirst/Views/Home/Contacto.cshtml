@@ -49,9 +49,23 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vex-js/4.1.0/js/vex.min.js" integrity="sha512-qU0PChDrIKPBhT0pJpD5yw3HtJYekKiJa1cl92tjKCCwLNOj5AZ/PGzxI5qIDmyIbk/6nK3vrEWshYozID56UA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 }
-
 @section Styles {
     <style>
+        .breadcrumb-item:hover img {
+            filter: brightness(0.6);
+            -webkit-filter: brightness(0.6);
+            -webkit-transform: translate3d(0,0,0);
+            transform: translate3d(0,0,0);
+        }
+
+        .breadcrumb-item a {
+            text-decoration: none;
+            color:black;
+        }
+        
+        .breadcrumb-item:hover a {
+            color:#ffc107
+        }
         .hovereffect {
             width: 100%;
             height: 100%;

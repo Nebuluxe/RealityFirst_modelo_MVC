@@ -77,6 +77,22 @@
     <br>
 }
 
-@section Filtrar{
+@section Styles{
+    <style>
+        .breadcrumb-item:hover img {
+            filter: brightness(0.6);
+            -webkit-filter: brightness(0.6);
+            -webkit-transform: translate3d(0,0,0);
+            transform: translate3d(0,0,0);
+        }
 
+        .breadcrumb-item a {
+            text-decoration: none;
+            color:black;
+        }
+        
+        .breadcrumb-item:hover a {
+            color:#ffc107
+        }
+    </style>
 }
