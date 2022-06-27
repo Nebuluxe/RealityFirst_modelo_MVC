@@ -1,5 +1,4 @@
 ﻿using RealityFirst.Models;
-using RealityFirst.Servicio.ServicioEstructura;
 using System.Data.SqlClient;
 using System.Collections.Generic;
 using System.Linq;
@@ -51,7 +50,7 @@ namespace RealityFirst.Servicio
             return evento;
         }
 
-        public IList<EventoModel> GetAll(int id)
+        public IList<EventoModel> GetAll()
         {
             IList<EventoModel> lista = new List<EventoModel>();
 
@@ -59,7 +58,7 @@ namespace RealityFirst.Servicio
             {
                 server.Open();
 
-                string query = string.Format("SELECT ev.id_evento, ev.nombre_ev, ev.lugar_evento, ev.fecha_evento,ev.imagen_evento, ar.nombre, ar.genero_musical, ar.id_artista FROM eventos AS ev JOIN Artista AS ar ON(ev.id_artista = ar.id_artista) where ev.id_artista = {0};", id);
+                string query = string.Format("SELECT ev.id_evento, ev.nombre_ev, ev.lugar_evento, ev.fecha_evento,ev.imagen_evento, ar.nombre, ar.genero_musical, ar.id_artista FROM eventos AS ev JOIN Artista AS ar ON(ev.id_artista = ar.id_artista)");
                 using (SqlCommand cmd = new SqlCommand(query, server))
                 {
                     using (SqlDataReader reader = cmd.ExecuteReader())
@@ -84,6 +83,14 @@ namespace RealityFirst.Servicio
             }
             return lista;
         }
+
+        public IList<EventoModel> DireccionarEventoArtista(int ID)
+        {
+            IList<EventoModel> lista = this.GetAll();
+
+            return lista.Where(x => x.id_artista == ID).ToList();
+        }
+
 
     }
 

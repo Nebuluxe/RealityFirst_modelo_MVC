@@ -24,8 +24,15 @@ namespace RealityFirst.Controllers
 
         public IActionResult Eventos(int id)
         {
-            IList<EventoModel> lista = evento.GetAll(id);
+            IList<EventoModel> lista = evento.DireccionarEventoArtista(id);
             return View("Eventos", lista);
         }
+
+        public IActionResult TodosEventos()
+        {
+            IList<EventoModel> lista = evento.GetAll();
+            return View("TodosEventos",lista); 
+        }   
+
     }
 }

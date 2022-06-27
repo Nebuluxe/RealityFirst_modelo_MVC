@@ -1,5 +1,4 @@
 ﻿using RealityFirst.Models;
-using RealityFirst.Servicio.ServicioEstructura;
 using System.Data.SqlClient;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +6,7 @@ using System.Linq;
 
 namespace RealityFirst.Servicio
 {
-    public class ArtistaServicio : IServicio<ArtistaModel>
+    public class ArtistaServicio 
     {
         private string Connection;
 
@@ -116,6 +115,7 @@ namespace RealityFirst.Servicio
             IList<ArtistaModel> lista = this.GetAll();
             return lista.Where(x => x.id == id).ToList();
         }
+
 
     }
 

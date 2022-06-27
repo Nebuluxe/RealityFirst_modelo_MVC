@@ -1,24 +1,18 @@
 ﻿@{
-    ViewData["Title"] = "Eventos";
 }
-
 @model IList<EventoModel>
 
-<div class="container" >
-    <a class="btn btn-dark rounded-pill" asp-area="" asp-controller="Artista" asp-action="Artista"> - VOLVER - </a>
+<div align="center">
+     <input class="form-control me-2" type="Buscar" id="search" onkeyup="busquedaDeEventos()" name="search" placeholder="Buscar" aria-label="Buscar">
+     <br>
 </div>
 
-<div class="container" align="center">
-    <h1 class="display-2"> Eventos Proximos </h1>
-    <br><br><br>
-</div>
-
-<div class="row shadow p-3 mb-5 bg-body rounded" align="center">
-    @foreach (EventoModel evento in Model)
-    {   
+@foreach (EventoModel evento in Model)
+{   
+    <div class="row shadow p-3 mb-5 bg-body rounded" align="center">
         <div class="row g-0 bg-dark position-relative ">
             <div class="col-md-6 mb-md-0 p-md-4">
-              <img src="@evento.imagen_evento"  class="w-100" alt="...">
+                <img src="@evento.imagen_evento"  class="w-100" alt="...">
             </div>
             <div class="col-md-6 p-4 ps-md-0 text-light">
                 <h5 class="mt-0" id="titulo"></h5>
@@ -68,5 +62,32 @@
                 </div>
             </div>
         </div>
-    }
-</div>
+    </div>
+    <br>
+}
+
+@section Filtrar{
+
+    <script type="text/javascript">
+        function busquedaDeEventos() {
+
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("search");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("tabla");
+            tr = table.getElementsByTagName("tr");
+            for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+                } else {
+                tr[i].style.display = "none";
+                }
+            }       
+            }
+        } 
+    </script>
+
+}
