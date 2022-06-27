@@ -2,15 +2,137 @@
     ViewData["Title"] = "Contacto";
 }
 
-<div align  = center class = container>
-    <img src="~/imagen/logo_transparent.png" alt="img not fund" width=300px>
-    <h1 class="display-6">
-        Puedes contactarnos mediante nuestras redes sociales o llamando al <br>
-        +56 9 9999 9999 o tambien contactanos por nuestro email realityfirst@gmail.com. <br>
-        <br>
-        <img src="~/imagen/Logo-Instagram-Bonito-Png.png" width="50px"> instagram: RealityFirst <br>
-        <img src= "~/imagen/facebook.jpg" width="50px"> facebook: Reality First
-
-
-    </h1>
+<div class="container" >
+    <nav class="rounded-pill shadow bg-light" style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+        <ol class="breadcrumb align-content-center">
+            <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index"><div class="bg-image hover-overlay"><img src="~/imagen/icono_index.png" style="width: 30px;"></div></a></li>
+            <li class="breadcrumb-item active"><a>Contacto</a></li>
+        </ol>
+    </nav>
 </div>
+<br>
+<div class="row g-2 bg-light">
+    <div class="col-md-6 mb-md-0 p-md-4">
+        <div class="hovereffect">
+            <img class="img-responsive" src="~/imagen/logoReality.png" alt="">
+                <div class="overlay">
+                    <h1><i style="font-size: 2rem;">Nuestras Redes Sociales</i></h1>
+				    <p>
+					    <a href="https://www.instagram.com/realityfirstofficial/">
+                            <i class="bi bi-instagram" style="font-size: 3.5rem;">  </i>
+                        </a>
+                        <a href="https://www.facebook.com/profile.php?id=100082750901454">
+                            <i class="bi bi-facebook" style="font-size: 3.5rem;">  </i>
+                        </a>
+                        <a href="https://twitter.com/RealityFirst6">
+                            <i class="bi bi-twitter" style="font-size: 3.5rem;">  </i>
+                        </a>
+                        <a href="#">
+                            <i class="bi bi-envelope" onclick="swal('Aquí está nuestro correo electrónico!', 'RealityFirstOfficial@gmail.com', 'https://i.ibb.co/L5FkJ2V/correo.gif')" style="font-size: 3.5rem;"></i>
+                        </a>
+				    </p>
+                </div>
+        </div>
+    </div>
+    <div class="col-md-6 mb-md-0 p-md-4">
+        <h1 class="mt-0">Reality First</h1>
+        <p>Hola Visitante! 👋😊, queremos que nos conozcas mejor por lo que te contaremos 
+           que somos una productora de eventos y también de venta de entradas, tenemos
+           artistas que probablemente te interesen como el mismísimo "Bad Bunny" 🐰, "Metallica"🎸, 
+           "Lil Peep"💀 y más!, actualmente tenemos a la venta entradas para futuros conciertos y 
+           festivales que tienen los artistas ¡AQUI!, así es, AQUI en Chile, revisa nuestras redes
+           sociales para más información poniendo el mouse encima de la imagen de la izquierda.</p>
+        <h4>🍏🍎🍐🍊🍋🍌Si algún día vienes a nuestras oficinas, ¡TRAENOS FRUTA!🍉🍓🍇🍓🍈🍒</h4>
+    </div>
+</div>
+@section Scripts {
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vex-js/4.1.0/js/vex.min.js" integrity="sha512-qU0PChDrIKPBhT0pJpD5yw3HtJYekKiJa1cl92tjKCCwLNOj5AZ/PGzxI5qIDmyIbk/6nK3vrEWshYozID56UA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+}
+
+@section Styles {
+    <style>
+        .hovereffect {
+            width: 100%;
+            height: 100%;
+            float: left;
+            overflow: hidden;
+            position: relative;
+            text-align: center;
+            cursor: default;
+
+        }
+
+        .hovereffect .overlay {
+            position: absolute;
+            overflow: hidden;
+            width: 80%;
+            height: 80%;
+            left: 10%;
+            top: 10%;
+            border-bottom: 1px solid #FFF;
+            border-top: 1px solid #FFF;
+            -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+            transition: opacity 0.35s, transform 0.35s;
+            -webkit-transform: scale(0,1);
+            -ms-transform: scale(0,1);
+            transform: scale(0,1);
+        }
+
+        .hovereffect:hover .overlay {
+            opacity: 1;
+            filter: alpha(opacity=100);
+            -webkit-transform: scale(1);
+            -ms-transform: scale(1);
+            transform: scale(1);
+        }
+
+        .hovereffect img {
+            display: block;
+            position: relative;
+            -webkit-transition: all 0.35s;
+            transition: all 0.35s;
+        }
+
+        .hovereffect:hover img {
+            filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="linear" slope="0.6" /><feFuncG type="linear" slope="0.6" /><feFuncB type="linear" slope="0.6" /></feComponentTransfer></filter></svg>#filter');
+            filter: brightness(0.6);
+            -webkit-filter: brightness(0.6);
+        }
+
+        .hovereffect h1 {
+            text-transform: uppercase;
+            text-align: center;
+            position: relative;
+            font-size: 17px;
+            background-color: transparent;
+            color: #FFF;
+            padding: 1em 0;
+            opacity: 0;
+            filter: alpha(opacity=0);
+            -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+            transition: opacity 0.35s, transform 0.35s;
+            -webkit-transform: translate3d(0,-100%,0);
+            transform: translate3d(0,-100%,0);
+        }
+
+        .hovereffect a, .hovereffect p {
+            color: #FFF;
+            padding: 1em 0;
+            text-decoration: none;
+            opacity: 0;
+            filter: alpha(opacity=0);
+            -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+            transition: opacity 0.35s, transform 0.35s;
+            -webkit-transform: translate3d(0,100%,0);
+            transform: translate3d(0,100%,0);
+        }
+
+        .hovereffect:hover a, .hovereffect:hover p, .hovereffect:hover h1 {
+            opacity: 1;
+            filter: alpha(opacity=100);
+            -webkit-transform: translate3d(0,0,0);
+            transform: translate3d(0,0,0);
+        }
+    </style>
+}
