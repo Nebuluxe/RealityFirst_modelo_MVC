@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "LogIn";
+}
+<br><br><br>
+
+<div class=container align="center"> 
+    <img src="~/imagen/usuariologo.jpg" class="img-fluid " width="200px" alt="...">
+    <form>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+            <input type="password" class="form-control" id="exampleInputPassword1">
+        </div>
+    </form>
+    <form asp-area="" asp-controller="Home" asp-action="index">
+        <button class="btn btn-dark" >Iniciar sesion</button>
+    </form>
+    <br>
+    <a class="nav-link active" aria-current="page" asp-area="" asp-controller="LogIn" asp-action="CrearCuenta"><h4>Crear Cuenta</h4></a>
+</div>
+
+<br><br><br>
