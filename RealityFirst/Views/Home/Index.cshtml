@@ -7,9 +7,9 @@
 
 <div class="container" align = center>
     <br>
-    <h1 class="display-4">Bienvenido a Realty First</h1>
+    <h1 class="display-4" style="color:white;">Bienvenido a Realty First</h1>
     <img src="~/imagen/logo.png" class="img-responsive rounded-circle shadow-lg p-3 mb-5 bg-body rounded" width="450px" alt="">
-    <h1 class="display-4">Aqui podras ver eventos y comprar entradas <br> para tus artistas favoritos</h1>
+    <h1 class="display-4" style="color:white;">Aqui podras ver eventos y comprar entradas <br> para tus artistas favoritos</h1>
     <br>
 </div>
 
@@ -26,7 +26,7 @@
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="6" aria-label="Slide 7"></button>
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="7" aria-label="Slide 8"></button>
     </div>
-    <div class="carousel-inner">
+    <div class="carousel-inner rounded-3">
         <div class="carousel-item active">
             <img src="~/imagen/carrusel_ak420.jpg" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
@@ -83,16 +83,16 @@
 <br><br><br>
 
 <div class="container" align="center">
-    <h1 class="display-2">Noticias del momento</h1>
+    <h1 class="display-2" style="color:white;">Noticias del momento</h1>
     <br><br><br>
 </div>
 
 @foreach (ArtistaModel artista in Model)
 {   
-    <div class="row g-2 bg-light">
+    <div class="row g-2 bg-secondary text-white bg-opacity-75 rounded-3">
         <div class="col-md-6 mb-md-0 p-md-4">
             <div class="hovereffect">
-                <img class="img-responsive" src="@artista.foto_noticia" alt="">
+                <img class="img-responsive rounded-3" src="@artista.foto_noticia" alt="">
                     <div class="overlay">
                         <h2>@artista.nombre</h2>
 				        <p>

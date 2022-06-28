@@ -3,7 +3,6 @@ using System.Data.SqlClient;
 using System.Collections.Generic;
 using System.Linq;
 
-
 namespace RealityFirst.Servicio
 {
     public class ArtistaServicio 
