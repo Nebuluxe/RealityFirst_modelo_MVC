@@ -1,0 +1,245 @@
+﻿@{
+    ViewData["Title"] = "Compra entrada";
+}
+
+@model EventoModel
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap">
+
+<div class="container" align="center">
+    <br>
+    <h1 class="display-2"> Aqui tienes tu ticket para entrar al evento </h1>
+    <br>
+    <h1 class="display-6"> Te recomendamos tomar una foto de este o puedes escanear el codigo QR para guardarlo</h1>
+    <br>
+</div>
+
+<div class="ticket">
+    <div class="left">
+        <div class="image">
+            <img src="~/imagen/logo.png" height= "250px" width="250px">
+
+        </div>
+        <div class="ticket-info">
+            <p class="date">
+                <span class="june-29">@Model.fecha_evento</span>
+            </p>
+            <div class="show-name">
+                <h1>@Model.nombre_evento</h1>
+                <h2>@Model.nombre_artista</h2>
+            </div>
+            <div class="time">
+                <p>8:00<span> Hasta </span> 11:00</p>
+            </div>
+        </div>
+    </div>
+    <div class="right">
+        <p class="admit-one">
+            <span>Reality</span>
+            <span>First</span>
+            <span>Reality</span>
+        </p>
+        <div class="right-info-container">
+            <div class="show-name">
+                <h1 align="center">@Model.nombre_evento</h1>
+            </div>
+            <div class="time">
+                <p>20:00<span> Hasta </span>21:00</p>
+            </div>
+            <div class="barcode">
+                <img src="https://external-preview.redd.it/cg8k976AV52mDvDb5jDVJABPrSZ3tpi1aXhPjgcDTbw.png?auto=webp&s=1c205ba303c1fa0370b813ea83b9e1bddb7215eb" alt="QR code">
+            </div>
+            <p class="ticket-number">
+                #20030220
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="container" align="center">
+    <br><br><br>
+    <a class="btn btn-warning " aria-current="page" asp-area="" asp-controller="Home" asp-action="Index" >-   Volver al inicio  -</a>
+    <br><br><br>
+</div>
+
+@section Styles{
+     
+    <style>
+        body,
+        html {
+            height: 100vh;
+            display: grid;
+            font-family: "Staatliches", cursive;
+            color: black;
+            font-size: 14px;
+            letter-spacing: 0.1em;
+        }
+    
+        .ticket {
+            margin: auto;
+            display: flex;
+            background: white;
+            box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+        }
+    
+        .left {
+            display: flex;
+        }
+    
+        .image {
+            height: 250px;
+            width: 250px;
+            background-size: contain;
+            opacity: 0.85;
+        }
+    
+        .admit-one {
+            position: absolute;
+            color: darkgray;
+            height: 250px;
+            padding: 0 10px;
+            letter-spacing: 0.15em;
+            display: flex;
+            text-align: center;
+            justify-content: space-around;
+            writing-mode: vertical-rl;
+            transform: rotate(-180deg);
+        }
+    
+        .admit-one span:nth-child(2) {
+            color: white;
+            font-weight: 700;
+        }
+    
+        .left .ticket-number {
+            height: 250px;
+            width: 250px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            padding: 5px;
+        }
+    
+        .ticket-info {
+            padding: 10px 30px;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            justify-content: space-between;
+            align-items: center;
+        }
+    
+        .date {
+            border-top: 1px solid gray;
+            border-bottom: 1px solid gray;
+            padding: 5px 0;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+    
+        .date span {
+            width: 100px;
+        }
+    
+        .date span:first-child {
+            text-align: left;
+        }
+    
+        .date span:last-child {
+            text-align: right;
+        }
+    
+        .date .june-29 {
+            color: #837f80;
+            font-size: 20px;
+        }
+    
+        .show-name {
+            font-size: 32px;
+            font-family: "Nanum Pen Script", cursive;
+            color: #0c0c0c;
+        }
+    
+        .show-name h1 {
+            font-size: 48px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            color: #4a437e;
+        }
+    
+        .time {
+            padding: 10px 0;
+            color: #4a437e;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            font-weight: 700;
+        }
+    
+        .time span {
+            font-weight: 400;
+            color: gray;
+        }
+    
+        .left .time {
+            font-size: 16px;
+        }
+    
+    
+        .location {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+            padding-top: 8px;
+            border-top: 1px solid gray;
+        }
+    
+        .location .separator {
+            font-size: 20px;
+        }
+    
+        .right {
+            width: 180px;
+            border-left: 1px dashed #404040;
+        }
+    
+        .right .admit-one {
+            color: darkgray;
+        }
+    
+        .right .admit-one span:nth-child(2) {
+            color: gray;
+        }
+    
+        .right .right-info-container {
+            height: 250px;
+            padding: 10px 10px 10px 35px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+        }
+    
+        .right .show-name h1 {
+            font-size: 18px;
+        }
+    
+        .barcode {
+            height: 100px;
+        }
+    
+        .barcode img {
+            height: 100%;
+        }
+    
+        .right .ticket-number {
+            color: gray;
+        }
+    
+    </style>
+}

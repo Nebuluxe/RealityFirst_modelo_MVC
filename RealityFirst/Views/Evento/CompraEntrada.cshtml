@@ -1,0 +1,108 @@
+﻿@{
+    ViewData["Title"] = "Compra";
+}
+
+
+@model EventoModel
+
+<div class="container" align="center">
+    <h1 class="display-2"> Compra entrada </h1>
+    <br><br>
+</div>
+
+<div class="container shadow-lg p-3 mb-5 bg-body rounded">
+    <div class="container">
+        <div class="row g-2">
+        <div class="col-6" align="center">
+            <div class="p-3 border bg-light">Nombre del evento: @Model.nombre_evento 🎭</div>
+        </div>
+        <div class="col-6" align="center">
+            <div class="p-3 border bg-light">Lugar del evento: @Model.lugar_evento 📍</div>
+        </div>
+        <div class="col-6" align="center">
+            <div class="p-3 border bg-light">Nombre del artista: @Model.nombre_artista 👤</div>
+        </div>
+        <div class="col-6" align="center">
+            <div class="p-3 border bg-light">Fecha del evento: @Model.fecha_evento 📅</div>
+        </div>
+    </div>
+
+    <br>
+
+    <div align="center" class="border-top">
+        <br>
+        <select class="form-select" aria-label="Default select example">
+          <option selected>Seleccione el tipo de entrada</option>
+          <option value="1">Platea alta $20.000</option>
+          <option value="2">Platea Baja $30.000</option>
+          <option value="4">Primera fila $45.000</option>
+          <option value="5">Cancha $60.000</option>
+          <option value="6">VIP $100.000</option>
+        </select>
+        <br>
+        <h1 class="display-6"> Lugar y valor de las entradas </h1>
+        <img src="~/imagen/mostrarlugarentrada.png" class="img-fluid">
+        <br>
+        <br>
+    </div>
+
+    <div class="container border-top" align="center">
+        <br>
+        <h1 class="display-6"> Datos Personales </h1>
+        <br>
+    </div>
+
+    <div class="container">
+        <!--Datos Personales-->
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Nombre Completo:</span>
+            <input type="text" class="form-control" placeholder=" " aria-label="Username" aria-describedby="basic-addon1">
+        </div>
+    
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="" aria-label="Recipient's username" aria-describedby="basic-addon2">
+            <span class="input-group-text" id="basic-addon2">gmail.com</span>
+        </div>
+  
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon3">Número Teléfono:</span>
+            <input type="text" class="form-control" id="basic-url" placeholder="+56 9 9999 9999" aria-describedby="basic-addon3">
+        </div>
+    
+        <div class="input-group mb-3">
+            <span class="input-group-text">Dirección:</span>
+            <input type="text" class="form-control" placeholder=" " aria-label="Amount (to the nearest dollar)">
+        </div>
+    
+        <div class="input-group mb-3">
+            <span class="input-group-text">R.U.T</span>
+            <input type="text" class="form-control" placeholder="99.999.999" aria-label="Username">
+            <span class="input-group-text">-</span>
+            <input type="text" class="form-control" placeholder="9" aria-label="Server">
+        </div>
+        <br><br>
+    
+        <!--Metodo de Pago-->
+        <div class="container border-top" align="center">
+            <br>
+            <h1 class="display-6"> Datos Personales </h1>
+            <br>
+        </div>
+        <div align=center>
+            <table>
+            <tr class="container">
+                <th><button type="button" class="btn btn-secondary btn-lg" disabled><img src="~/imagen/Onepay.png" width=89%></button></th>
+                <th><button type="button" class="btn btn-secondary btn-lg" disabled><img src="~/imagen/Webpay.png" width=100%></button></th>
+            </tr>
+            </table>  
+        </div>
+        <br>
+        <div class="container border-top" align=center>
+            <a href="/Evento/Ticket/@Model.id_artista" class="btn btn-warning">Terminar compra</a>
+            <br>
+            <br>
+        </div>
+    </div>
+</div>
+
+

@@ -13,12 +13,14 @@ namespace RealityFirst.Controllers
     {
         IConfiguration config;
         EventoServicio evento;
+        EntradaServicio entrada;
 
         public EventoController(IConfiguration config)
         {
             this.config = config;
             string ConnectionString = config.GetConnectionString("DBRealityFirst");
             evento = new EventoServicio(ConnectionString);
+            entrada = new EntradaServicio(ConnectionString);
 
         }
 
@@ -33,6 +35,24 @@ namespace RealityFirst.Controllers
             IList<EventoModel> lista = evento.GetAll();
             return View("TodosEventos",lista); 
         }   
+
+        public IActionResult CompraEntrada(int id)
+        {
+            EventoModel obj = evento.Get(id);
+            return View("CompraEntrada",obj);
+        }
+
+        public IActionResult PagoTarjeta(int id)
+        {
+            EventoModel obj = evento.Get(id);
+            return View("PagoTarjeta", obj);
+        }
+
+        public IActionResult Ticket(int id)
+        {
+            EventoModel obj = evento.Get(id);
+            return View("Ticket", obj);
+        }
 
     }
 }
