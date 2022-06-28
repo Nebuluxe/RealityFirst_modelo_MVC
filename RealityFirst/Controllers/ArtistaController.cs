@@ -6,7 +6,7 @@ using System.Diagnostics;
 using RealityFirst.Models;
 using RealityFirst.Servicio;
 using Microsoft.Extensions.Configuration;
-
+ 
 namespace RealityFirst.Controllers
 {
     public class ArtistaController : Controller

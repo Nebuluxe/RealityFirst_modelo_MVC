@@ -1,7 +1,7 @@
 ﻿namespace RealityFirst.Models
 {
     public class EventoModel
-    {
+    { 
         public int id_evento { get; set; }
         public string nombre_evento { get; set; }
         public string lugar_evento { get; set; }

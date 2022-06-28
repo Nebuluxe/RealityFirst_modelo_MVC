@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 namespace RealityFirst.Servicio
-{
+{ 
     public class ArtistaServicio 
     {
         private string Connection;

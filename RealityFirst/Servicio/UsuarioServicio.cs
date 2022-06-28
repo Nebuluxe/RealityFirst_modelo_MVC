@@ -6,7 +6,7 @@ using System.Linq;
 namespace RealityFirst.Servicio
 {
     public class UsuarioServicio
-    {
+    { 
         private string Connection;
 
         public UsuarioServicio(string ConectionString)

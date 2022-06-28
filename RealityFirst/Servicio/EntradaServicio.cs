@@ -5,7 +5,7 @@ using System.Linq;
 
 
 namespace RealityFirst.Servicio
-{
+{ 
     public class EntradaServicio
     {
         private string Connection;

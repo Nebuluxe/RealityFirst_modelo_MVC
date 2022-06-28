@@ -7,7 +7,7 @@ using RealityFirst.Models;
 using RealityFirst.Servicio;
 using Microsoft.Extensions.Configuration;
 using Microsoft.AspNetCore.Http;
-
+ 
 namespace RealityFirst.Controllers
 {
     public class HomeController : Controller
