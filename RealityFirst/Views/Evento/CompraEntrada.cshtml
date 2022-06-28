@@ -6,24 +6,25 @@
 @model EventoModel 
 
 <div class="container" align="center">
-    <h1 class="display-2"> Compra entrada </h1>
+    <h1 class="display-2 text-white"> Compra entrada </h1>
     <br><br>
 </div>
 
-<div class="container shadow-lg p-3 mb-5 bg-body rounded">
-    <div class="container">
-        <div class="row g-2">
+<div class="container shadow-lg p-3 mb-5 bg-dark bg-opacity-75 rounded-3">
+    <div class="container rounded-3">
+        <div class="row g-2 rounded-3">
         <div class="col-6" align="center">
-            <div class="p-3 border bg-light">Nombre del evento: @Model.nombre_evento 🎭</div>
+            <div class="p-3 border bg-dark bg-opacity-25 text-white">Nombre del evento: @Model.nombre_evento 🎭</div>
         </div>
         <div class="col-6" align="center">
-            <div class="p-3 border bg-light">Lugar del evento: @Model.lugar_evento 📍</div>
+            <div class="p-3 border bg-dark bg-opacity-25 text-white">Lugar del evento: @Model.lugar_evento 📍</div>
         </div>
         <div class="col-6" align="center">
-            <div class="p-3 border bg-light">Nombre del artista: @Model.nombre_artista 👤</div>
+            <div class="p-3 border bg-dark bg-opacity-25 text-white">Nombre del artista: @Model.nombre_artista 👤</div>
         </div>
         <div class="col-6" align="center">
-            <div class="p-3 border bg-light">Fecha del evento: @Model.fecha_evento 📅</div>
+            <div class="p-3 border bg-dark bg-opacity-25 text-white">Fecha del evento: @Model.fecha_evento 📅</div>
+        </div>
         </div>
     </div>
 
@@ -40,7 +41,7 @@
           <option value="6">VIP $100.000</option>
         </select>
         <br>
-        <h1 class="display-6"> Lugar y valor de las entradas </h1>
+        <h1 class="display-6 text-white"> Lugar y valor de las entradas </h1>
         <img src="~/imagen/mostrarlugarentrada.png" class="img-fluid">
         <br>
         <br>
@@ -48,7 +49,7 @@
 
     <div class="container border-top" align="center">
         <br>
-        <h1 class="display-6"> Datos Personales </h1>
+        <h1 class="display-6 text-white"> Datos Personales </h1>
         <br>
     </div>
 
@@ -56,11 +57,11 @@
         <!--Datos Personales-->
         <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1">Nombre Completo:</span>
-            <input type="text" class="form-control" placeholder=" " aria-label="Username" aria-describedby="basic-addon1">
+            <input type="text" class="form-control" placeholder="Pitt O'Corrto" aria-label="Username" aria-describedby="basic-addon1">
         </div>
     
         <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="" aria-label="Recipient's username" aria-describedby="basic-addon2">
+            <input type="text" class="form-control" placeholder="kiritojadsZZZomg777rexKun" aria-label="Recipient's username" aria-describedby="basic-addon2">
             <span class="input-group-text" id="basic-addon2">gmail.com</span>
         </div>
   
@@ -71,7 +72,7 @@
     
         <div class="input-group mb-3">
             <span class="input-group-text">Dirección:</span>
-            <input type="text" class="form-control" placeholder=" " aria-label="Amount (to the nearest dollar)">
+            <input type="text" class="form-control" placeholder="En Mi Casa 5754" aria-label="Amount (to the nearest dollar)">
         </div>
     
         <div class="input-group mb-3">
@@ -85,7 +86,7 @@
         <!--Metodo de Pago-->
         <div class="container border-top" align="center">
             <br>
-            <h1 class="display-6"> Datos Personales </h1>
+            <h1 class="display-6 text-white"> Datos Personales </h1>
             <br>
         </div>
         <div align=center>
@@ -98,7 +99,8 @@
         </div>
         <br>
         <div class="container border-top" align=center>
-            <a href="/Evento/Ticket/@Model.id_artista" class="btn btn-warning">Terminar compra</a>
+            <br>
+            <a href="/Evento/Ticket/@Model.id_artista" class="btn btn-dark text-white">Terminar compra</a>
             <br>
             <br>
         </div>

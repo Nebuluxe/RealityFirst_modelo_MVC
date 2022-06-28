@@ -16,68 +16,61 @@
 </div>
 
 <div class="container" align="center">
-    <h1 class="display-2"> Eventos Proximos </h1>
-    <br><br><br>
+    <br>
+    <h1 class="display-2 text-white"> Eventos Proximos </h1>
+    <br><br>
 </div>
-
-<div class="row shadow p-3 mb-5 bg-body rounded" align="center">
-    @foreach (EventoModel evento in Model)
-    {   
-        <div class="row g-0 bg-dark position-relative ">
-            <div class="col-md-6 mb-md-0 p-md-4">
-              <img src="@evento.imagen_evento"  class="w-100" alt="...">
-            </div>
-            <div class="col-md-6 p-4 ps-md-0 text-light">
-                <h5 class="mt-0" id="titulo"></h5>
-                <h3>Informacion</h3>
-                <table class="table table-dark">
-                <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Evento</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Nombre</td>
-                        <td id="nombre">@evento.nombre_evento</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Lugar Evento</td>
-                        <td id="lugarEvento">@evento.lugar_evento</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td >Fecha Evento</td>
-                        <td id="fechaEvento">@evento.fecha_evento</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">4</th>
-                        <td>Artista</td>
-                        <td id="nombreartista">@evento.nombre_artista</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">5</th>
-                        <td>Genero Musical</td>
-                        <td id="genero">@evento.genero_musical</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">4</th>
-                        <td>Tipo de evento STR</td>
-                        <td id="tipoEventoStr">-</td>
-                    </tr>
-                </tbody>
-                </table>
-                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                    <a href="/Evento/CompraEntrada/@evento.id_artista" class="btn btn-warning">Comprar Entrada</a>
-                </div>
+@foreach (EventoModel evento in Model)
+{   
+    <div class="row g-0 bg-secondary rounded-3 bg-opacity-75 text-white position-relative ">
+        <div class="col-md-6 mb-md-0 p-md-4">
+            <img src="@evento.imagen_evento"  class="w-100 rounded-3" alt="...">
+        </div>
+        <div class="col-md-6 p-4 ps-md-0 text-light">
+            <h5 class="mt-0" id="titulo"></h5>
+            <h3>Informacion</h3>
+            <table class="table text-white rounded-3">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Evento</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Nombre</td>
+                    <td id="nombre">@evento.nombre_evento</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Lugar Evento</td>
+                    <td id="lugarEvento">@evento.lugar_evento</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td >Fecha Evento</td>
+                    <td id="fechaEvento">@evento.fecha_evento</td>
+                </tr>
+                <tr>
+                    <th scope="row">4</th>
+                    <td>Artista</td>
+                    <td id="nombreartista">@evento.nombre_artista</td>
+                </tr>
+                <tr>
+                    <th scope="row">5</th>
+                    <td>Genero Musical</td>
+                    <td id="genero">@evento.genero_musical</td>
+                </tr>
+            </tbody>
+            </table>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <a href="/Evento/CompraEntrada/@evento.id_artista" class="btn btn-dark text-white">Comprar Entrada</a>
             </div>
         </div>
-    }
-</div>
-
+    </div>
+}
+<br><br><br>
 @section Styles {
     <style>
         .breadcrumb-item:hover img {

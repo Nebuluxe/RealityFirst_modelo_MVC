@@ -4,7 +4,7 @@
 @model IList<ArtistaModel>
  
 <div class="container" >
-    <nav class="rounded-pill shadow bg-secondary opacity" style="--bs-breadcrumb-divider: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPjxwYXRoIGQ9Ik0yLjUgMEwxIDEuNSAzLjUgNCAxIDYuNSAyLjUgOGw0LTQtNC00eiIgZmlsbD0iY3VycmVudENvbG9yIi8+PC9zdmc+) !important;" aria-label="breadcrumb">
+    <nav class="rounded-pill shadow bg-white" style="--bs-breadcrumb-divider: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPjxwYXRoIGQ9Ik0yLjUgMEwxIDEuNSAzLjUgNCAxIDYuNSAyLjUgOGw0LTQtNC00eiIgZmlsbD0iY3VycmVudENvbG9yIi8+PC9zdmc+) !important;" aria-label="breadcrumb">
         <ol class="breadcrumb align-content-center">
             <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index"><div class="bg-image hover-overlay"><img src="~/imagen/icono_index.png" style="width: 30px;"></div></a></li>
             <li class="breadcrumb-item active"><a>Artistas</a></li>
@@ -13,24 +13,25 @@
 </div>
 
 <div class="container" align="center">
-    <h1 class="display-2"> Artistas </h1>
-    <br><br><br>
+    <br>
+    <h1 class="display-2 text-white"> Artistas </h1>
+    <br><br>
 </div>
 
 <div class="row" align="center">
 
     @foreach (ArtistaModel artista in Model)
     {   
-        <div class="col-sm-3 ">
-          <div class="card shadow p-3 mb-5 bg-body rounded" style="width: 18rem;">
-              <img src="@artista.foto" class="card-img-top" alt="Card image">
+        <div class="col-sm-3 bg-transparent">
+          <div class="card shadow p-3 mb-5 bg-secondary text-white bg-opacity-75 rounded-3" style="width: 18rem;">
+              <img src="@artista.foto" class="card-img-top rounded-3" alt="Card image">
               <div class="card-body">
                 <h5 class="card-title">@artista.nombre</h5>
               </div>
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item">Genero: @artista.genero</li>
-                <li class="list-group-item">Fecha de nacimiento: @artista.fecha_nacimiento</li>
-                <li class="list-group-item">Edad: @artista.edad</li>
+              <ul class="list-group list-group-flush bg-transparent text-white rounded-3">
+                <li class="list-group-item bg-transparent text-white rounded-3">Genero: @artista.genero</li>
+                <li class="list-group-item bg-transparent text-white rounded-3">Fecha de nacimiento: @artista.fecha_nacimiento</li>
+                <li class="list-group-item bg-transparent text-white rounded-3">Edad: @artista.edad</li>
               </ul>
               <div class="card-body" align="center">
                 <a href="/Artista/Ficha_artista/@artista.id" class="btn btn-dark">Ver mas</a>
