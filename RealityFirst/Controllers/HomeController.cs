@@ -6,6 +6,7 @@ using System.Diagnostics;
 using RealityFirst.Models;
 using RealityFirst.Servicio;
 using Microsoft.Extensions.Configuration;
+using Microsoft.AspNetCore.Http;
 
 namespace RealityFirst.Controllers
 {
@@ -36,6 +37,13 @@ namespace RealityFirst.Controllers
         {
             return View();
         }
+
+        public IActionResult IniciarSesion()
+        {
+            HttpContext.Session.Remove("usuario");
+            return RedirectToAction("Login","Acceso");
+        }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
