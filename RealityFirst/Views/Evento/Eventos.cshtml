@@ -28,7 +28,7 @@
         </div>
         <div class="col-md-6 p-4 ps-md-0 text-light">
             <h5 class="mt-0" id="titulo"></h5>
-            <h3>Informacion</h3>
+            <h3>@evento.nombre_evento</h3>
             <table class="table text-white rounded-3">
             <thead>
                 <tr>
@@ -39,7 +39,7 @@
             <tbody>
                 <tr>
                     <th scope="row">1</th>
-                    <td>Nombre</td>
+                    <td>Nombre evento</td>
                     <td id="nombre">@evento.nombre_evento</td>
                 </tr>
                 <tr>
@@ -61,6 +61,11 @@
                     <th scope="row">5</th>
                     <td>Genero Musical</td>
                     <td id="genero">@evento.genero_musical</td>
+                </tr>
+                <tr>
+                    <th scope="row">4</th>
+                    <td>Hora del evento</td>
+                    <td id="hora">@evento.inicio hasta @evento.fin</td>
                 </tr>
             </tbody>
             </table>

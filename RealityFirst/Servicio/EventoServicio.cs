@@ -23,7 +23,7 @@ namespace RealityFirst.Servicio
             {
                 server.Open();
 
-                string query = string.Format("SELECT ev.id_evento, ev.nombre_ev, ev.lugar_evento, ev.fecha_evento,ev.imagen_evento, ar.nombre, ar.genero_musical, ar.id_artista FROM eventos AS ev JOIN Artista AS ar ON(ev.id_artista = ar.id_artista) where ev.id_artista = {0};", id);
+                string query = string.Format("SELECT ev.id_evento, ev.nombre_ev, ev.lugar_evento, ev.fecha_evento,ev.imagen_evento, ar.nombre, ar.genero_musical, ar.id_artista, ev.hora_inicio, ev.hora_fin FROM eventos AS ev JOIN Artista AS ar ON(ev.id_artista = ar.id_artista) where ev.id_artista = {0};", id);
                 using (SqlCommand cmd = new SqlCommand(query, server))
                 {
                     using (SqlDataReader reader = cmd.ExecuteReader())
@@ -40,7 +40,9 @@ namespace RealityFirst.Servicio
                                 imagen_evento = reader.GetString(4),
                                 nombre_artista = reader.GetString(5),
                                 genero_musical = reader.GetString(6),
-                                id_artista = reader.GetInt32(7)
+                                id_artista = reader.GetInt32(7),
+                                inicio = reader.GetString(8),
+                                fin = reader.GetString(9)
                             };
                         }
                     }
@@ -58,7 +60,7 @@ namespace RealityFirst.Servicio
             {
                 server.Open();
 
-                string query = string.Format("SELECT ev.id_evento, ev.nombre_ev, ev.lugar_evento, ev.fecha_evento,ev.imagen_evento, ar.nombre, ar.genero_musical, ar.id_artista FROM eventos AS ev JOIN Artista AS ar ON(ev.id_artista = ar.id_artista)");
+                string query = string.Format("SELECT ev.id_evento, ev.nombre_ev, ev.lugar_evento, ev.fecha_evento,ev.imagen_evento, ar.nombre, ar.genero_musical, ar.id_artista, ev.hora_inicio, ev.hora_fin FROM eventos AS ev JOIN Artista AS ar ON(ev.id_artista = ar.id_artista)");
                 using (SqlCommand cmd = new SqlCommand(query, server))
                 {
                     using (SqlDataReader reader = cmd.ExecuteReader())
@@ -74,7 +76,9 @@ namespace RealityFirst.Servicio
                                 imagen_evento = reader.GetString(4),
                                 nombre_artista = reader.GetString(5),
                                 genero_musical = reader.GetString(6),
-                                id_artista = reader.GetInt32(7)
+                                id_artista = reader.GetInt32(7),
+                                inicio = reader.GetString(8),
+                                fin = reader.GetString(9)
                             });
                         }
                     }

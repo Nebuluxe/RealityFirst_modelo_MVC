@@ -1,0 +1,60 @@
+﻿@{
+}
+@model IList<EventoModel>
+
+    <div class=container align=center>
+      <h1 class="display-3">Eventos</h1>
+      <br>
+    </div>
+
+    <div class="container shadow-lg p-3 mb-5 bg-body rounded bg-opacity-75">
+        <!-- Busqueda -->
+        <input class="form-control me-2" type="Buscar" id="search" onkeyup="busquedaDeEventos()" name="search" placeholder="Buscar" aria-label="Buscar"> 
+        <table class="table table-withe">
+          <thead>
+            <tr>
+              <th scope="col">Artista</th>
+              <th scope="col">Nombre evento</th>
+              <th scope="col">Lugar evento</th>
+              <th scope="col">Fecha y hora</th>
+              <th scope="col">ver mas detalles</th>
+            </tr>
+          </thead>
+          <tbody id="tabla">
+              @foreach (EventoModel evento in Model)
+                {
+                  <tr>  
+                        <td>@evento.nombre_artista</td>
+                        <td>@evento.nombre_evento</td>
+                        <td>@evento.lugar_evento</td>
+                        <td>@evento.fecha_evento: @evento.inicio hasta @evento.fin</td>
+                        <td><a href="/Evento/Eventos/@evento.id_artista" class="btn btn-dark text-white">Ver mas detalles</a></td>
+                  </tr>
+             }
+          </tbody>
+    </div>
+      
+    <!-- Java Script -->
+    
+@section Scripts{
+    <script type="text/javascript">
+        function busquedaDeEventos() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("search");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("tabla");
+            tr = table.getElementsByTagName("tr");
+          for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+                } else {
+                tr[i].style.display = "none";
+                }
+            }       
+          }
+        } 
+    </script>
+}

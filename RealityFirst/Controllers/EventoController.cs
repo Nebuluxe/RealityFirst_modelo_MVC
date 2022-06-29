@@ -30,12 +30,6 @@ namespace RealityFirst.Controllers
             return View("Eventos", lista);
         }
 
-        public IActionResult TodosEventos()
-        {
-            IList<EventoModel> lista = evento.GetAll();
-            return View("TodosEventos",lista); 
-        }   
-
         public IActionResult CompraEntrada(int id)
         {
             EventoModel obj = evento.Get(id);
@@ -54,5 +48,10 @@ namespace RealityFirst.Controllers
             return View("Ticket", obj);
         }
 
+        public IActionResult busquedaeventos()
+        {
+            IList<EventoModel> lista = evento.GetAll();
+            return View("busquedaeventos", lista);
+        }
     }
 }
