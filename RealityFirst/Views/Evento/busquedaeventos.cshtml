@@ -1,16 +1,26 @@
 ﻿@{
+    ViewData["Title"] = "Eventos";
 }
 @model IList<EventoModel>
 
+    <div class="container" >
+        <nav class="rounded-pill shadow bg-light" style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+            <ol class="breadcrumb align-content-center">
+                <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index"><div class="bg-image hover-overlay"><img src="~/imagen/icono_index.png" style="width: 30px;"></div></a></li>
+                <li class="breadcrumb-item active"><a>Eventos</a></li>
+            </ol>
+        </nav>
+    </div>
+
     <div class=container align=center>
-      <h1 class="display-3">Eventos</h1>
+      <h1 class="display-3 text-white">Eventos</h1>
       <br>
     </div>
 
-    <div class="container shadow-lg p-3 mb-5 bg-body rounded bg-opacity-75">
+    <div class="container shadow-lg p-3 mb-5 bg-secondary rounded bg-opacity-75">
         <!-- Busqueda -->
         <input class="form-control me-2" type="Buscar" id="search" onkeyup="busquedaDeEventos()" name="search" placeholder="Buscar" aria-label="Buscar"> 
-        <table class="table table-withe">
+        <table class="table text-white">
           <thead>
             <tr>
               <th scope="col">Artista</th>

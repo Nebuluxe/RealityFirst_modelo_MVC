@@ -41,43 +41,7 @@ namespace RealityFirst.Controllers
         [HttpPost]
         public IActionResult Registrar(UsuarioModel Usuario)
         {
-            bool registrado;
-            string mensaje;
-
-            if (Usuario.Clave == Usuario.ConfirmarClave)
-            {
-                Usuario.Clave = ConvertirSha256(Usuario.Clave);
-            }
-            else {
-                ViewData["Mensaje"] = "Las contraseñas no coindicen, intentelo nuevamente";
-                return View();
-            }
-
-            using (SqlConnection connection = new SqlConnection(cadenaConnection)) { 
-                SqlCommand cmd = new SqlCommand("sp_RegistrarUsuario", connection);
-                cmd.Parameters.AddWithValue("Correo", Usuario.Correo);
-                cmd.Parameters.AddWithValue("Clave", Usuario.Clave);
-                cmd.Parameters.Add("Registrado", SqlDbType.Bit).Direction = ParameterDirection.Output;
-                cmd.Parameters.Add("Correo", SqlDbType.VarChar,100).Direction = ParameterDirection.Output;
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                connection.Open();
-
-                cmd.ExecuteNonQuery();
-
-                registrado = Convert.ToBoolean(cmd.Parameters["Registrado"].Value);
-                mensaje = cmd.Parameters["Mensaje"].Value.ToString();
-            }
-            ViewData["Mensaje"] = mensaje;
-
-            if (registrado)
-            {
-                return RedirectToAction("Login", "Acceso");
-            }
-            else
-            {
-                return View();
-            }
+            return View("Login", "Acceso");
         }
 
         [HttpPost]
