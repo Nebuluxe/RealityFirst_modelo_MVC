@@ -7,9 +7,11 @@ using RealityFirst.Models;
 using RealityFirst.Servicio;
 using Microsoft.Extensions.Configuration;
 using Microsoft.AspNetCore.Http;
- 
+using Microsoft.AspNetCore.Authorization;
+
 namespace RealityFirst.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         IConfiguration config;
@@ -26,11 +28,6 @@ namespace RealityFirst.Controllers
         {
             IList<ArtistaModel> lista = artista.GetAll();
             return View("index", lista);
-        }
-
-        public IActionResult Privacy()
-        {
-            return View();
         }
 
         public IActionResult Contacto()

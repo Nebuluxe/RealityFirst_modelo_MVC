@@ -1,0 +1,44 @@
+﻿@{
+    if (ViewData.TryGetValue("ParentLayout", out var parentLayout))
+    {
+        Layout = (string)parentLayout;
+    }
+    else
+    {
+        Layout = "/Areas/Identity/Pages/_Layout.cshtml";
+    }
+}
+<div class="row g-2 bg-secondary bg-opacity-75 rounded-3">
+    <div class="col-md-6 mb-md-0 p-md-4">
+        <h2 class="text-white">Gestiona tu cuenta</h2>
+
+        <div>
+            <h4 class="text-white">Cambia los ajustes de tu cuenta</h4>
+            <hr />
+            <div class="row">
+                <div class="col-md-3">
+                    <partial name="_ManageNav" />
+                </div>
+                <div class="col-md-9 text-white">
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@RenderSection("Espacios", required: false)
+
+<style>
+    .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+        color: white;
+        background-color: black;
+    }
+    .nav-pills .nav-link, .nav-pills .show>.nav-link {
+        color: white;
+    }
+</style>
+
+@section Scripts {
+    @RenderSection("Scripts", required: false)
+}

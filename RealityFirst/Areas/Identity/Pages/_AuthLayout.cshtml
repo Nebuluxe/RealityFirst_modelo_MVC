@@ -1,0 +1,60 @@
+﻿@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+</head>
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <div class="card login-logout-tab bg-secondary bg-opacity-75 rounded-3" style="color:#FFC312;">
+            <div class="card-header">
+                <ul class="nav nav-tabs card-header-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link" style="text-decoration:none;color:#FFC312;" href="/Identity/Account/Login">Iniciar Sesión</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="text-decoration:none;color:#FFC312;" href="/Identity/Account/Register">Registrate</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-content bg-dark bg-opacity-50">
+                <div class="row container">
+                    <div class="mb-3">
+                        <br>
+                        @RenderBody()
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@RenderSection("Espacios", required: false)
+
+@section Scripts{
+    @RenderSection("Scripts", required: false)
+    <script>
+        $(function() { 
+            var current = location.pathname;
+            $('.nav-tabs li a').each(function() { 
+                var $this = $(this);
+                if (current.indexOf($this.attr('href')) !== -1) {
+                    $this.addClass('active bg-dark bg-opacity-50')
+                }
+            })
+        })
+    </script>
+    }
+@section Styles{
+    <style>
+        .nav-tabs .nav-link.active {
+            color: none;
+            background-color: none;
+            border: rgba(var(--bs-dark-rgb),var(--bs-bg-opacity))!important;
+        }
+        .nav-tabs .nav-link {
+            border: none;
+        }
+    </style>
+}
