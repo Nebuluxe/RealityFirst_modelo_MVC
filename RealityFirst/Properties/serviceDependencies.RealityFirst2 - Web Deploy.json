@@ -1,12 +1,14 @@
 {
   "dependencies": {
     "mssql1": {
-      "type": "mssql",
+      "secretStore": "AzureAppSettings",
+      "type": "mssql.onprem",
       "connectionId": "ConnectionStrings:RealityFirstDBContextConnection",
       "dynamicId": null
     },
     "mssql2": {
-      "type": "mssql",
+      "secretStore": "AzureAppSettings",
+      "type": "mssql.onprem",
       "connectionId": "ConnectionStrings:DBRealityFirst",
       "dynamicId": null
     }

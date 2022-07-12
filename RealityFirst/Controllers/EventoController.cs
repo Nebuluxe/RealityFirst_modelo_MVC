@@ -10,7 +10,6 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace RealityFirst.Controllers
 {
-    [Authorize]
     public class EventoController : Controller
     {
         IConfiguration config;

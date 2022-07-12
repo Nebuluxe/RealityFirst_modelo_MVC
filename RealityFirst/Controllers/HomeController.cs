@@ -11,7 +11,6 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace RealityFirst.Controllers
 {
-    [Authorize]
     public class HomeController : Controller
     {
         IConfiguration config;
